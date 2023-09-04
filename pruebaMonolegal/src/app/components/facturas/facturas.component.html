@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center mt-3">
+  <h1>facturas</h1>
+</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">CodFactura</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">NIT</th>
+        <th scope="col">subTotal</th>
+        <th scope="col">SubTotal</th>
+        <th scope="col">Iva</th>
+        <th scope="col">Retencion</th>
+        <th scope="col">Fecha Creación</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Pagada</th>
+        <th scope="col">Fecha Pago</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of facturas">
+        <td>{{ factura.codigoFactura}}</td>
+        <td>{{ factura.cliente }}</td>
+        <td>{{ factura.ciudad }}</td>
+        <td>{{ factura.nit}}</td>
+        <td>{{ factura.subTotal + (factura.subTotal * 0.19) }}</td>
+        <td>{{ factura.subTotal }}</td>
+        <td>{{ factura.subTotal * 0.19}}</td>
+        <td>sss</td>
+        <td>{{ factura.fechaCrea }}</td>
+        <td>{{ factura.estado }}</td>
+        <td>{{ factura.pagada }}</td>
+        <td>{{ factura.fechaPago }}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="irEditar(factura)">Enviar correo</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
